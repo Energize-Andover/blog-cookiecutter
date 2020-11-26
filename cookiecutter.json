@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "github_username": "john-doe",
+    "_copy_without_render": [
+        "*.md",
+        "*.markdown",
+        "*.scss"
+    ]
+}
