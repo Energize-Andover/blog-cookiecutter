@@ -22,15 +22,19 @@ def run_and_output(args) -> None:
 
 
 def main():
+    commands = [
+        ["bundle", "update"],
+        ["bundle", "install"],
+        ["git", "init"],
+        ["git", "add", "-A"],
+        ["git", "commit", "-m", "Initial commit"]
+    ]
+    n = len(commands)
+
     try:
-        print(f"Post-generate hook 1/3: git init")
-        run_and_output(["git", "init"])
-
-        print(f"Post-generate hook 2/3: bundle update")
-        run_and_output(["bundle", "update"])
-
-        print(f"Post-generate hook 3/3: bundle install")
-        run_and_output(["bundle", "install"])
+        for index, command in enumerate(commands):
+            print(f"Post-generate hook {index+1}/{n}: {' '.join(command)}")
+            run_and_output(command)
     except FileNotFoundError:
         raise SystemExit(f"{RED}Requirement not met. Stopping.{RESET}")
     except subprocess.CalledProcessError:
