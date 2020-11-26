@@ -23,7 +23,6 @@ def run_and_output(args) -> None:
 
 def main():
     commands = [
-        ["bundle", "update"],
         ["bundle", "install"],
         ["git", "init"],
         ["git", "add", "-A"],
@@ -31,6 +30,7 @@ def main():
     ]
     n = len(commands)
 
+    print()
     try:
         for index, command in enumerate(commands):
             print(f"Post-generate hook {index+1}/{n}: {' '.join(command)}")
