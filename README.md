@@ -6,7 +6,8 @@ The theme is based on Cayman. It has the following modifications:
 - Changed font from Open Sans to Roboto
 - Changed `index.md` to display all blog posts
 
-The [post_gen_project.py] script will set up the project similarly to `jekyll new`,
+The [post_gen_project.py](hooks/post_gen_project.py)
+script will set up the project similarly to `jekyll new`,
 running `bundle install`.
 It also sets up the project under Git and creates the first commit for you.
 
