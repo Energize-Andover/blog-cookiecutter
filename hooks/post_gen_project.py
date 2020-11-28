@@ -31,14 +31,18 @@ def main():
     n = len(commands)
 
     print()
-    try:
-        for index, command in enumerate(commands):
-            print(f"Post-generate hook {index+1}/{n}: {' '.join(command)}")
+    for index, command in enumerate(commands):
+        print(f"Post-generate hook {index + 1}/{n}: {' '.join(command)}")
+        try:
             run_and_output(command)
-    except FileNotFoundError:
-        raise SystemExit(f"{RED}Requirement not met. Stopping.{RESET}")
-    except subprocess.CalledProcessError:
-        raise SystemExit(f"{RED}Post-generate hook failed. Stopping.{RESET}")
+        except FileNotFoundError:
+            raise SystemExit(
+                f"{RED}Requirement not met. Stopping.{RESET}"
+            )
+        except subprocess.CalledProcessError:
+            raise SystemExit(
+                f"{RED}Post-generate hook failed. Stopping.{RESET}"
+            )
 
     print("Successfully ran post-generate hooks.")
 
