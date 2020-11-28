@@ -23,7 +23,7 @@ def run_and_output(args) -> None:
 
 def main():
     commands = [
-        ["bundle", "install"],
+        ["bundler", "install"],
         ["git", "init"],
         ["git", "add", "-A"],
         ["git", "commit", "-m", "Initial commit"]
@@ -37,13 +37,12 @@ def main():
             run_and_output(command)
         except FileNotFoundError:
             raise SystemExit(
-                f"{RED}Requirement not met. Stopping.{RESET}"
+                f"{RED}Requirement {command[0]} not met. Stopping.{RESET}"
             )
         except subprocess.CalledProcessError:
             raise SystemExit(
                 f"{RED}Post-generate hook failed. Stopping.{RESET}"
             )
-
     print("Successfully ran post-generate hooks.")
 
 
