@@ -19,7 +19,7 @@ It also sets up the project under Git and creates the first commit for you.
 - A Github account
 
 ### 1. Create the project from the template
-Run `cookiecutter gh:Energize-Andover/blog-cookiecutter`.
+Run `cookiecutter gh:energize-andover/blog-cookiecutter`.
 
 ### 2. Create the repository on Github
 Go to https://github.com/new to create your repository.
